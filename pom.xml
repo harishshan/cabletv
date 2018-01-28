@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.9.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -27,6 +27,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+	    </dependency>
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
@@ -34,8 +43,9 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,25 +56,10 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
+		</dependency> -->		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -78,13 +73,47 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+				<!-- <plugin>
+			        <groupId>org.codehaus.mojo</groupId>
+			        <artifactId>exec-maven-plugin</artifactId>
+			        <executions>
+			            <execution>
+			                <id>exec-npm-install</id>
+			                <phase>generate-sources</phase>
+			                <configuration>
+			                    <workingDirectory>${project.basedir}/cabletv-app</workingDirectory>
+			                    <executable>npm.cmd</executable>
+			                    <arguments>
+			                        <argument>install</argument>
+			                    </arguments>
+			                </configuration>
+			                <goals>
+			                    <goal>exec</goal>
+			                </goals>
+			            </execution>
+			            <execution>
+			                <id>exec-npm-ng-build</id>
+			                <phase>generate-sources</phase>
+			                <configuration>
+			                    <workingDirectory>${project.basedir}/cabletv-app</workingDirectory>
+			                    <executable>ng.cmd</executable>
+			                    <arguments>
+			                        <argument>build</argument>
+			                        <argument>prod</argument>
+			                        <argument>base-href=/</argument>
+			                    </arguments>
+			                </configuration>
+			                <goals>
+			                    <goal>exec</goal>
+			                </goals>
+			            </execution>
+			        </executions>
+	    		</plugin> -->
+			</plugins>		
 	</build>
-
-
 </project>
