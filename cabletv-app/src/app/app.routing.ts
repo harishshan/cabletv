@@ -18,7 +18,7 @@ const appRoutes: Routes =
       component: AddCustomerComponent
     },
     {
-      path: 'editcustomer',
+      path: 'editcustomer/:id',
       component: EditCustomerComponent
     },
     {

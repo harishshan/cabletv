@@ -33,8 +33,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   ];
   constructor(private _router: Router) {
   }
-  onclick(i) {
+  viewCustomer(i) {
     this._router.navigate(['viewcustomer' , i ]);
+  }
+  editCustomer(i) {
+    this._router.navigate(['editcustomer' , i ]);
+  }
+  deleteCustomer(i) {
+    this._router.navigate(['deletecustomer' , i ]);
   }
   ngOnInit() {
   }
