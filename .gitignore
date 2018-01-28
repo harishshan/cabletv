@@ -45,3 +45,49 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### cabletv-app ###
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+cabletv-app/dist
+cabletv-app/dist-server
+cabletv-app/tmp
+cabletv-app/out-tsc
+
+# dependencies
+cabletv-app/node_modules
+
+# IDEs and editors
+cabletv-app/.idea
+cabletv-app/.project
+cabletv-app/.classpath
+cabletv-app/.c9/
+cabletv-app/*.launch
+cabletv-app/.settings/
+cabletv-app/*.sublime-workspace
+
+# IDE - VSCode
+cabletv-app/.vscode/*
+cabletv-app/!.vscode/settings.json
+cabletv-app/!.vscode/tasks.json
+cabletv-app/!.vscode/launch.json
+cabletv-app/!.vscode/extensions.json
+
+# misc
+cabletv-app/.sass-cache
+cabletv-app/connect.lock
+cabletv-app/coverage
+cabletv-app/libpeerconnection.log
+cabletv-app/npm-debug.log
+cabletv-app/testem.log
+cabletv-app/typings
+
+# e2e
+cabletv-app/e2e/*.js
+cabletv-app/e2e/*.map
+
+# System Files
+cabletv-app/.DS_Store
+cabletv-app/Thumbs.db
+
