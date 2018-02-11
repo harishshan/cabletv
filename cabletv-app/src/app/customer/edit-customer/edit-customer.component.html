@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th><label class="col-md-4 col-form-label" for="customer.id">Customer Id</label></th>
+    <th><label class="col-md-4 col-form-label" for="customer.name">Customer Name</label></th>
+    <th><label class="col-md-4 col-form-label" for="customer.phoneNumber">Phone Number</label></th>
+    <th><label class="col-md-4 col-form-label" for="customer.emailId">Email ID</label></th>
+    <th><label class="col-md-4 col-form-label" for="customer.address">Address</label></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="con in customer">
+    <td><input type="date" class="form-control" id="connectionCreationDate" placeholder="01-01-2018"></td>
+    <td><input type="number" class="form-control" id="depositeAmount" placeholder="0"></td>
+    <td><button type="submit" class="btn btn-danger btn-block">Deactivate</button></td>
+  </tr>
+  </tbody>
+</table>
+<app-connection></app-connection>

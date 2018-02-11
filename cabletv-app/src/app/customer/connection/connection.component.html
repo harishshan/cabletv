@@ -1,0 +1,39 @@
+<!-- Button trigger modal -->
+<button id="modalTrigger" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+  Add Connection
+</button>
+<!-- Modal -->
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button id="closeExampleModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th><label class="col-md-4 col-form-label" for="connectionCreationDate">Creation Date</label></th>
+            <th><label class="col-md-4 col-form-label" for="depositeAmount">Deposite Amount</label></th>
+            <th><label class="col-md-4 col-form-label" for="depositeAmount">Deactivate</label></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="con in connections">
+            <td><input type="date" class="form-control" id="connectionCreationDate" placeholder="01-01-2018"></td>
+            <td><input type="number" class="form-control" id="depositeAmount" placeholder="0"></td>
+            <td><button type="submit" class="btn btn-danger btn-block">Deactivate</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

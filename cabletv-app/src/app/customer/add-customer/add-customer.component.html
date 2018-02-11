@@ -13,9 +13,9 @@
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-md-4 col-form-label" for="emailAddress">Email Address</label>
+      <label class="col-md-4 col-form-label" for="emailId">Email ID</label>
       <div class="col-md-8">
-        <input type="tel" class="form-control" id="emailAddress" placeholder="Email-Id">
+        <input type="tel" class="form-control" id="emailId" placeholder="Email-Id">
       </div>
     </div>
     <div class="form-group row">
@@ -24,29 +24,6 @@
         <input type="text" class="form-control" id="address" placeholder="Address">
       </div>
     </div>
-    <div class="row col-md-12">
-      <div class="form-group row col-md-offset-8 col-md-4">
-        <button type="submit" class="btn btn-success btn-block" style="float: right!important;">Add Connection</button>
-      </div>
-      <button style="float: right">Button Right</button>
-      <table class="table">
-        <thead>
-          <tr>
-            <th><label class="col-md-4 col-form-label" for="connectionCreationDate">Creation Date</label></th>
-            <th><label class="col-md-4 col-form-label" for="depositeAmount">Deposite Amount</label></th>
-            <th><label class="col-md-4 col-form-label" for="depositeAmount">Deactivate</label></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="con in connectionss">
-            <td><input type="date" class="form-control" id="connectionCreationDate" placeholder="01-01-2018"></td>
-            <td><input type="number" class="form-control" id="depositeAmount" placeholder="0"></td>
-            <td><button type="submit" class="btn btn-danger btn-block">Deactivate</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <div class="container col-md-8 col-md-offset-4">
         <button type="submit" class="btn btn-primary btn-block">Create Customer</button>
     </div>

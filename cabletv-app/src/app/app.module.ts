@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
@@ -8,6 +8,7 @@ import { EditCustomerComponent } from './customer/edit-customer/edit-customer.co
 import { ViewCustomerComponent } from './customer/view-customer/view-customer.component';
 import { HomeComponent} from './home/home.component';
 import {routing} from './app.routing';
+import { ConnectionComponent } from './customer/connection/connection.component';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import {routing} from './app.routing';
     AddCustomerComponent,
     EditCustomerComponent,
     ViewCustomerComponent,
-    HomeComponent
+    HomeComponent,
+    ConnectionComponent
   ],
   imports: [
     BrowserModule, routing
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
