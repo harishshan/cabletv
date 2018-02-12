@@ -3,29 +3,29 @@
     <div class="form-group row">
       <label class="col-md-4 col-form-label" for="customerName">Customer Name</label>
       <div class="col-md-8">
-        <input type="text" class="form-control" id="customerName" placeholder="Customer Name">
+        <input type="text" class="form-control" id="customerName" placeholder="Customer Name" [(ngModel)] = "name" name="name">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-md-4 col-form-label" for="phoneNumber">Phone Number</label>
       <div class="col-md-8">
-        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" [(ngModel)] = "phoneNumber" name="phoneNumbeer">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-md-4 col-form-label" for="emailId">Email ID</label>
       <div class="col-md-8">
-        <input type="tel" class="form-control" id="emailId" placeholder="Email-Id">
+        <input type="tel" class="form-control" id="emailId" placeholder="Email-Id" [(ngModel)] = "emailId" name="emailId">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-md-4 col-form-label" for="address">Address</label>
       <div class="col-md-8">
-        <input type="text" class="form-control" id="address" placeholder="Address">
+        <input type="text" class="form-control" id="address" placeholder="Address" [(ngModel)] = "addres" name="address">
       </div>
     </div>
     <div class="container col-md-8 col-md-offset-4">
-        <button type="submit" class="btn btn-primary btn-block">Create Customer</button>
+      <button type="submit" class="btn btn-primary btn-block" (click) = "createCustomer()">Create Customer</button>
     </div>
   </form>
 </div>

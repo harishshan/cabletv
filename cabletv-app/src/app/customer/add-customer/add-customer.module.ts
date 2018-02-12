@@ -1,16 +1,10 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import {AddCustomerComponent} from './add-customer.component';
-
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [
-    AddCustomerComponent
-  ],
   imports: [
-
+    CommonModule, FormsModule
   ],
-  providers: [],
-  bootstrap: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  declarations: []
 })
 export class AddCustomerModule { }

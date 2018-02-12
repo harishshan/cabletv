@@ -9,6 +9,11 @@ import { ViewCustomerComponent } from './customer/view-customer/view-customer.co
 import { HomeComponent} from './home/home.component';
 import {routing} from './app.routing';
 import { ConnectionComponent } from './customer/connection/connection.component';
+import { HsLabelComponent } from './component/hs-label/hs-label.component';
+import { HsInputTextComponent } from './component/hs-input-text/hs-input-text.component';
+import { HsLabelInputTextComponent } from './component/hs-label-input-text/hs-label-input-text.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,10 +25,13 @@ import { ConnectionComponent } from './customer/connection/connection.component'
     EditCustomerComponent,
     ViewCustomerComponent,
     HomeComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    HsLabelComponent,
+    HsInputTextComponent,
+    HsLabelInputTextComponent
   ],
   imports: [
-    BrowserModule, routing
+    BrowserModule, routing, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
