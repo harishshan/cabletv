@@ -1,60 +1,37 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
-// import {Subscription} from 'rxjs/Rx';
+import { Component, OnInit } from '@angular/core';
+import { CustomerBO } from '../customer/customerBO';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CustomerService } from '../customer/customer.service';
+import { HttpClient } from '@angular/common/http';
+import {CustomerListResponse} from '../customer/customerListResponse';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: []
+  styleUrls: ['./home.component.css'],
+  providers: [CustomerService, HttpClient]
 })
+export class HomeComponent implements OnInit {
 
-export class HomeComponent implements OnInit, OnDestroy {
-  public customers: Customer [] = [
-    {
-      'Id': 100,
-      'Name': 'Chitra',
-      'PhoneNumber': '9952897661',
-      'Address': '153 Anna Nagar, Kancheepuram',
-      'NoOfConnections' : 1,
-      'ConnectionCreatedDate' : 152662684,
-      'DepositeAmount' : 500,
-      'DueAmount' : 0
-    },
-    {
-      'Id': 400,
-      'Name': 'Harish',
-      'PhoneNumber': '9003369782',
-      'Address': '153 Anna Nagar, Kancheepuram',
-      'NoOfConnections' : 2,
-      'ConnectionCreatedDate' : 1526862684,
-      'DepositeAmount' : 500,
-      'DueAmount' : 125
-    }
-  ];
-  constructor(private _router: Router) {
-  }
-  viewCustomer(i) {
-    this._router.navigate(['viewcustomer' , i ]);
-  }
-  editCustomer(i) {
-    this._router.navigate(['editcustomer' , i ]);
-  }
-  deleteCustomer(i) {
-    this._router.navigate(['deletecustomer' , i ]);
+  public customerList: CustomerBO[];
+  private customerListResponse: CustomerListResponse;
+  constructor(private _router: Router, private customerService: CustomerService) {
   }
   ngOnInit() {
+    this.customerService.getCustomerLit().subscribe(
+      res => {
+        console.log(res);
+        this.customerListResponse = res;
+        this.customerList = this.customerListResponse._embedded.Customer;
+        console.log(this.customerList);
+      });
   }
-  ngOnDestroy() {
+  viewCustomer(customerIndex) {
+    this._router.navigate(['viewCustomer', customerIndex]);
   }
-}
-
-export class Customer {
-  Id: number;
-  Name: string;
-  PhoneNumber: string;
-  Address: string;
-  NoOfConnections: number;
-  ConnectionCreatedDate: number;
-  DepositeAmount: number;
-  DueAmount: number;
+  editCustomer(customerIndex) {
+    this._router.navigate(['editCustomer', customerIndex]);
+  }
+  deleteCustomer(customerIndex) {
+  }
 }

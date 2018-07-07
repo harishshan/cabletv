@@ -1,33 +1,25 @@
-<div class="container">
-  <table *ngIf='customers && customers.length > 0' class="table">
-    <thead class="thead-dark">
+<div class="container table-responsive">
+  <table *ngIf='customerList && customerList.length > 0' class="table table-hover">
+    <thead class="thead-light">
     <tr>
-      <th>#</th>
+      <th>Id</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Address</th>
-      <th>No Of Connections</th>
-      <th>Connection Created Date</th>
-      <th>Deposite Amount</th>
-      <th>Due Amount</th>
       <th>View</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let c of customers'>
-      <td> {{c.Id}} </td>
-      <td> {{c.Name }} </td>
-      <td> {{c.PhoneNumber}} </td>
-      <td> {{c.Address}} </td>
-      <td> {{c.NoOfConnections}} </td>
-      <td> {{c.ConnectionCreatedDate}} </td>
-      <td> {{c.DepositeAmount}} </td>
-      <td> {{c.DueAmount}} </td>
-      <td> <button (click)="viewCustomer(c.Id)">View</button> </td>
-      <td> <button (click)="editCustomer(c.Id)">Edit</button> </td>
-      <td> <button (click)="deleteCustomer(c.Id)">Delete</button> </td>
+    <tr *ngFor='let c of customerList'>
+      <td> {{c.id}} </td>
+      <td> {{c.name }} </td>
+      <td> {{c.phoneNumber}} </td>
+      <td> {{c.address}} </td>
+      <td> <button (click)="viewCustomer(c.id)" class="btn btn-info">View</button> </td>
+      <td> <button (click)="editCustomer(c.id)" class="btn btn-warning">Edit</button> </td>
+      <td> <button (click)="deleteCustomer(c.id)"  class = "btn btn-danger">Delete</button> </td>
     </tr>
     </tbody>
   </table>

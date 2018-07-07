@@ -3,19 +3,19 @@ import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http'
 import { Observable } from 'rxjs/Observable';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
-import { Customer } from './customer';
+import { CustomerBO } from './customerBO';
+import {CustomerListResponse} from './customerListResponse';
 
 @Injectable()
 export class CustomerService {
 
   private customerUrl  = 'http://localhost:8080/Customer';
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
+      /*'Authorization': 'my-auth-token'*/
     })
   };
 
@@ -35,10 +35,13 @@ export class CustomerService {
       'Something bad happened; please try again later.');
   }*/
 
-  addCustomer (customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.customerUrl, customer, this.httpOptions)
+  addCustomer (customer: CustomerBO): Observable<CustomerBO> {
+    return this.httpClient.post<CustomerBO>(this.customerUrl, customer, this.httpOptions)
       .pipe(
         /*catchError(/!*this.handleError*!/)*/
       );
+  }
+  getCustomerLit(): Observable<any> {
+    return this.httpClient.get(this.customerUrl);
   }
 }

@@ -14,15 +14,15 @@ const appRoutes: Routes =
       component: HomeComponent
     },
     {
-      path: 'addcustomer',
+      path: 'addCustomer',
       component: AddCustomerComponent
     },
     {
-      path: 'editcustomer/:id',
+      path: 'editCustomer/:id',
       component: EditCustomerComponent
     },
     {
-      path: 'viewcustomer/:id',
+      path: 'viewCustomer/:id',
       component: ViewCustomerComponent
     },
     {
