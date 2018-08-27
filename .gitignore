@@ -54,6 +54,7 @@ cabletv-app/dist
 cabletv-app/dist-server
 cabletv-app/tmp
 cabletv-app/out-tsc
+cabletv-app/package-lock.json
 
 # dependencies
 cabletv-app/node_modules
