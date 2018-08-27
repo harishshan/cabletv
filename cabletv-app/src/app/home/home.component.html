@@ -1,0 +1,26 @@
+<div class="container table-responsive">
+  <table *ngIf='customerList && customerList.length > 0' class="table table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let c of customerList'>
+      <td> {{c.id}} </td>
+      <td> {{c.name }} </td>
+      <td> {{c.phoneNumber}} </td>
+      <td> {{c.address}} </td>
+      <td> <button (click)="viewCustomer(c.id)" class="btn btn-info">View</button> </td>
+      <td> <button (click)="editCustomer(c.id)" class="btn btn-warning">Edit</button> </td>
+      <td> <button (click)="deleteCustomer(c.id)"  class = "btn btn-danger">Delete</button> </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
